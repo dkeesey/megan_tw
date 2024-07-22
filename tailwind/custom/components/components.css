@@ -1,0 +1,120 @@
+/**
+ * Custom styles to immediately follow Tailwind’s `components` layer
+ *
+ * “Add more opinionated, complex classes like buttons, form controls, alerts,
+ * etc; the sort of pre-built components you often see in other frameworks that
+ * you might need to override with utility classes.”
+ *
+ * — from https://tailwindcss.com/docs/plugins#adding-components
+ */
+
+/**
+ * Post title styles
+ *
+ * These will be applied to all headings with a `page-title` or `entry-title`
+ * class on the frontend and to the post title in the block editor.
+ *
+ * The supplied styles are meant to match the default `h1` classes from
+ * Tailwind Typography.
+ */
+.page-title,
+.entry-title {
+	@apply max-w-content mx-auto px-4 mb-6 text-3xl font-extrabold text-neutral-900;
+}
+
+/**
+ * Layout styles for centered content areas
+ *
+ * If you are controlling the width of your content area with styles applied
+ * to its container, you can delete the following styles whose selectors begin
+ * with `.page-content >` and `.entry-content >`. For more details, please see
+ * the following:
+ *
+ * https://make.wordpress.org/core/2021/06/29/on-layout-and-content-width-in-wordpress-5-8/
+ */
+.page-content > *,
+.entry-content > * {
+	/* Content width from the `theme.json` file */
+	@apply max-w-content mx-auto px-4;
+
+	& li {
+		list-style-position: inside; /* Ensure bullet points are inside the padding */
+	}
+}
+
+.entry-content > .alignwide {
+	/* Wide width from the `theme.json` file */
+	@apply max-w-wide;
+}
+
+.entry-content > .alignfull {
+	@apply max-w-none;
+}
+
+.entry-content > .alignleft {
+	@apply float-left mr-8;
+}
+
+.entry-content > .alignright {
+	@apply float-right ml-8;
+}
+
+/* nav menu */ 
+
+#primary-menu {
+	@apply flex justify-around items-center;
+}
+
+#primary-menu > li {
+	@apply font-normal p-2;
+
+}
+#primary-menu > li > a {
+	@apply no-underline;
+}
+
+#primary-menu > li:hover {
+	@apply underline;
+}
+
+#primary-menu > .current-menu-item {
+	@apply font-bold text-yellow-100;
+}
+
+/* mobile menu */ 
+#mobile-menu {
+	transition: height 0.7s ease, opacity 1s ease;
+	opacity: 0;
+	height: 0;
+}
+
+#mobile-menu.open {
+    @apply opacity-100 h-auto;
+}
+
+#mobile-menu li {
+	@apply inline-block text-right text-white sm:pr-16 md:pr-36;
+}
+#mobile-menu a {
+	@apply hover:underline no-underline text-white;
+}
+
+#mobile-menu .current-menu-item {
+	@apply font-bold text-yellow-300;
+}
+
+/* intersection observer scroll animation */
+
+.scroll-hide {
+	& div, li, p, h1, h2, img, figure {
+		opacity: 0;
+    transition: opacity 1.5s ease-out, transform 1s ease-out;
+    transform: translateX(-200px);
+	}
+
+}
+
+.scroll-hide .animate {
+    opacity: 1;
+    transform: translateX(0);
+}
