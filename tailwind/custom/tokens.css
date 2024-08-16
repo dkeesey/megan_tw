@@ -1,0 +1,27 @@
+:root {
+  --palettes-lavender-fields-ui-muted: #7aac7f;
+  --palettes-lavender-fields-primary-default: #815cce;
+  --palettes-lavender-fields-primary-lighter: #ccbbf0;
+  --palettes-lavender-fields-primary-dark: #6f4bba;
+  --palettes-lavender-fields-secondary-dark: #6f4bba;
+  --palettes-lavender-fields-secondary-default: #9368ec;
+  --palettes-lavender-fields-secondary-lighter: #ccbbf0;
+  --palettes-lavender-fields-text-default: #40513b;
+  --palettes-lavender-fields-text-muted: #6c8f70;
+  --palettes-lavender-fields-text-faint: #9dc08b;
+  --palettes-lavender-fields-text-highlight: #a479fd;
+  --palettes-lavender-fields-text-inverted: #eaf1e2;
+  --palettes-lavender-fields-ui-surface: #e1ebdc;
+  --palettes-lavender-fields-ui-faint: #b9d8a9;
+  --palettes-lavender-fields-ui-highlight: #f1eef6;
+  --palettes-lavender-fields-ui-inverted: #455740;
+  --palettes-lavender-fields-ui-mid: #6c8366;
+  --palettes-lavender-fields-primary-light: #ae90ed;
+  --palettes-lavender-fields-secondary-light: #ae90ed;
+  --palettes-lavender-fields-primary-lightest: #f1eef6;
+  --palettes-lavender-fields-text-button: #ffffff;
+  --border-radius-soft-s: 0.5rem;
+  --border-radius-soft-m: 1rem;
+  --border-radius-soft-l: 2rem;
+  --border-radius-soft-xl: 3rem;
+}

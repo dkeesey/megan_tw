@@ -1,0 +1,1 @@
+<a href="https://megan-gredesky.clientsecure.me/" id="schedule-consultation" class="bg-lavender-fields-primary-default px-16 py-4 mt-2 mb-12 rounded-full mx-8 border border-blue-100 text-lavender-fields-text-inverted hover:text-black text-center hover:bg-lavender-fields-primary-light md:self-start">SCHEDULE CONSULTATION</a>

@@ -5,35 +5,197 @@
 		"color": {
 			"palette": [
 				{
-					"slug": "background",
-					"color": "#ffffff",
-					"name": "Background"
+					"name": "Primary Default",
+					"slug": "primary-default",
+					"color": "#815cce"
 				},
 				{
+					"name": "Primary Dark",
+					"slug": "primary-dark",
+					"color": "#6f4bba"
+				},
+				{
+					"name": "Primary Light",
+					"slug": "primary-light",
+					"color": "#ae90ed"
+				},
+				{
+					"name": "Primary Lighter",
+					"slug": "primary-lighter",
+					"color": "#ccbbf0"
+				},
+				{
+					"name": "Primary Lightest",
+					"slug": "primary-lightest",
+					"color": "#f1eef6"
+				},
+				{
+					"name": "Secondary Default",
+					"slug": "secondary-default",
+					"color": "#9368ec"
+				},
+				{
+					"name": "Secondary Dark",
+					"slug": "secondary-dark",
+					"color": "#6f4bba"
+				},
+				{
+					"name": "Secondary Light",
+					"slug": "secondary-light",
+					"color": "#ae90ed"
+				},
+				{
+					"name": "Secondary Lighter",
+					"slug": "secondary-lighter",
+					"color": "#ccbbf0"
+				},
+				{
+					"name": "Text Default",
+					"slug": "text-default",
+					"color": "#40513b"
+				},
+				{
+					"name": "Foreground",
 					"slug": "foreground",
-					"color": "#404040",
-					"name": "Foreground"
+					"color": "#40513b"
 				},
 				{
-					"slug": "primary",
-					"color": "#b91c1c",
-					"name": "Primary"
+					"name": "Text Muted",
+					"slug": "text-muted",
+					"color": "#6c8f70"
 				},
 				{
-					"slug": "secondary",
-					"color": "#15803d",
-					"name": "Secondary"
+					"name": "Text Faint",
+					"slug": "text-faint",
+					"color": "#9dc08b"
 				},
 				{
-					"slug": "tertiary",
-					"color": "#0369a1",
-					"name": "Tertiary"
+					"name": "Text Highlight",
+					"slug": "text-highlight",
+					"color": "#a479fd"
+				},
+				{
+					"name": "Text Inverted",
+					"slug": "text-inverted",
+					"color": "#eaf1e2"
+				},
+				{
+					"name": "UI Surface",
+					"slug": "ui-surface",
+					"color": "#e1ebdc"
+				},
+				{
+					"name": "Background",
+					"slug": "background",
+					"color": "#e1ebdc"
+				},
+				{
+					"name": "UI Faint",
+					"slug": "ui-faint",
+					"color": "#b9d8a9"
+				},
+				{
+					"name": "UI Muted",
+					"slug": "ui-muted",
+					"color": "#7aac7f"
+				},
+				{
+					"name": "UI Highlight",
+					"slug": "ui-highlight",
+					"color": "#f1eef6"
+				},
+				{
+					"name": "UI Inverted",
+					"slug": "ui-inverted",
+					"color": "#455740"
+				},
+				{
+					"name": "UI Mid",
+					"slug": "ui-mid",
+					"color": "#6c8366"
+				},
+				{
+					"name": "Text Button",
+					"slug": "text-button",
+					"color": "#ffffff"
 				}
-			]
+			],
+			"custom": true,
+			"customGradient": true
 		},
 		"layout": {
 			"contentSize": "40rem",
 			"wideSize": "60rem"
+		},
+		"typography": {
+			"fontSizes": [
+				{
+					"name": "Small",
+					"slug": "small",
+					"size": "0.75rem"
+				},
+				{
+					"name": "Base",
+					"slug": "base",
+					"size": "1rem"
+				},
+				{
+					"name": "Large",
+					"slug": "large",
+					"size": "1.125rem"
+				},
+				{
+					"name": "Extra Large",
+					"slug": "extra-large",
+					"size": "2.25rem"
+				},
+				{
+					"name": "Huge",
+					"slug": "huge",
+					"size": "8.75rem"
+				}
+			],
+			"fontFamilies": [
+				{
+					"fontFamily": "Inter",
+					"name": "Inter",
+					"slug": "inter"
+				}
+			],
+			"fluid": false,
+			"fontStyle": true,
+			"fontWeight": true,
+			"letterSpacing": true,
+			"lineHeight": false,
+			"textAlign": true,
+			"textColumns": false,
+			"textDecoration": true,
+			"textTransform": true
+		},
+		"spacing": {
+			"customPadding": true,
+			"customMargin": true,
+			"units": [
+				"px",
+				"em",
+				"rem",
+				"%"
+			]
+		},
+		"blocks": {
+			"core/paragraph": {
+				"color": {
+					"custom": true
+				},
+				"typography": {
+					"customFontSize": true
+				}
+			},
+			"core/button": {
+				"border": {
+					"radius": true
+				}
+			}
 		}
 	}
 }

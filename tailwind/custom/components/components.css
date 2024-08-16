@@ -78,7 +78,7 @@
 }
 
 #primary-menu > .current-menu-item {
-	@apply font-bold text-yellow-100;
+	@apply font-bold text-lavender-fields-text-default;
 }
 
 /* mobile menu */ 
@@ -93,14 +93,14 @@
 }
 
 #mobile-menu li {
-	@apply inline-block text-right text-white sm:pr-16 md:pr-36;
+	@apply inline-block text-right text-lavender-fields-text-default sm:pr-16 md:pr-36;
 }
 #mobile-menu a {
-	@apply hover:underline no-underline text-white;
+	@apply hover:underline no-underline text-lavender-fields-text-default;
 }
 
 #mobile-menu .current-menu-item {
-	@apply font-bold text-yellow-300;
+	@apply font-bold text-lavender-fields-text-muted;
 }
 
 /* intersection observer scroll animation */

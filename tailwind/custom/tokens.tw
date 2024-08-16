@@ -1,0 +1,37 @@
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        'lavender-fields': {
+          'ui-muted': '#7aac7f',
+          'primary-default': '#815cce',
+          'primary-lighter': '#ccbbf0',
+          'primary-dark': '#6f4bba',
+          'secondary-dark': '#6f4bba',
+          'secondary-default': '#9368ec',
+          'secondary-lighter': '#ccbbf0',
+          'text-default': '#40513b',
+          'text-muted': '#6c8f70',
+          'text-faint': '#9dc08b',
+          'text-highlight': '#a479fd',
+          'text-inverted': '#eaf1e2',
+          'ui-surface': '#e1ebdc',
+          'ui-faint': '#b9d8a9',
+          'ui-highlight': '#f1eef6',
+          'ui-inverted': '#455740',
+          'ui-mid': '#6c8366',
+          'primary-light': '#ae90ed',
+          'secondary-light': '#ae90ed',
+          'primary-lightest': '#f1eef6',
+          'text-button': '#ffffff',
+        },
+      },
+      borderRadius: {
+        'soft-s': '0.5rem',
+        'soft-m': '1rem',
+        'soft-l': '2rem',
+        'soft-xl': '3rem',
+      },
+    },
+  },
+};

@@ -7,7 +7,7 @@
  * @package Megan_tw
  */
 
-if ( ! defined( 'MEGAN_TW_VERSION' ) ) {
+if (!defined('MEGAN_TW_VERSION')) {
 	/*
 	 * Set the theme’s version number.
 	 *
@@ -15,10 +15,10 @@ if ( ! defined( 'MEGAN_TW_VERSION' ) ) {
 	 * to create your production build, the value below will be replaced in the
 	 * generated zip file with a timestamp, converted to base 36.
 	 */
-	define( 'MEGAN_TW_VERSION', '0.1.0' );
+	define('MEGAN_TW_VERSION', '0.1.0');
 }
 
-if ( ! defined( 'MEGAN_TW_TYPOGRAPHY_CLASSES' ) ) {
+if (!defined('MEGAN_TW_TYPOGRAPHY_CLASSES')) {
 	/*
 	 * Set Tailwind Typography classes for the front end, block editor and
 	 * classic editor using the constant below.
@@ -42,7 +42,7 @@ if ( ! defined( 'MEGAN_TW_TYPOGRAPHY_CLASSES' ) ) {
 	);
 }
 
-if ( ! function_exists( 'megan_tw_setup' ) ) :
+if (!function_exists('megan_tw_setup')):
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -50,17 +50,21 @@ if ( ! function_exists( 'megan_tw_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function megan_tw_setup() {
+	function megan_tw_setup()
+	{
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on Megan_tw, use a find and replace
 		 * to change 'megan_tw' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'megan_tw', get_template_directory() . '/languages' );
+		load_theme_textdomain(
+			'megan_tw',
+			get_template_directory() . '/languages'
+		);
 
 		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
+		add_theme_support('automatic-feed-links');
 
 		/*
 		 * Let WordPress manage the document title.
@@ -68,116 +72,136 @@ if ( ! function_exists( 'megan_tw_setup' ) ) :
 		 * hard-coded <title> tag in the document head, and expect WordPress to
 		 * provide it for us.
 		 */
-		add_theme_support( 'title-tag' );
+		add_theme_support('title-tag');
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
-		add_theme_support( 'post-thumbnails' );
+		add_theme_support('post-thumbnails');
 
 		// This theme uses wp_nav_menu() in two locations.
-		register_nav_menus(
-			array(
-				'menu-1' => __( 'Primary', 'megan_tw' ),
-				'menu-2' => __( 'Footer Menu', 'megan_tw' ),
-			)
-		);
+		register_nav_menus([
+			'menu-1' => __('Primary', 'megan_tw'),
+			'menu-2' => __('Footer Menu', 'megan_tw'),
+		]);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support(
-			'html5',
-			array(
-				'search-form',
-				'comment-form',
-				'comment-list',
-				'gallery',
-				'caption',
-				'style',
-				'script',
-			)
-		);
+		add_theme_support('html5', [
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+			'style',
+			'script',
+		]);
 
 		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
+		add_theme_support('customize-selective-refresh-widgets');
 
 		// Add support for editor styles.
-		add_theme_support( 'editor-styles' );
+		add_theme_support('editor-styles');
 
 		// Enqueue editor styles.
-		add_editor_style( 'style-editor.css' );
-		add_editor_style( 'style-editor-extra.css' );
+		add_editor_style('style-editor.css');
+		add_editor_style('style-editor-extra.css');
 
 		// Add support for responsive embedded content.
-		add_theme_support( 'responsive-embeds' );
+		add_theme_support('responsive-embeds');
 
 		// Remove support for block templates.
-		remove_theme_support( 'block-templates' );
+		remove_theme_support('block-templates');
 	}
 endif;
-add_action( 'after_setup_theme', 'megan_tw_setup' );
+add_action('after_setup_theme', 'megan_tw_setup');
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function megan_tw_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => __( 'Footer', 'megan_tw' ),
-			'id'            => 'sidebar-1',
-			'description'   => __( 'Add widgets here to appear in your footer.', 'megan_tw' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+function megan_tw_widgets_init()
+{
+	register_sidebar([
+		'name' => __('Footer', 'megan_tw'),
+		'id' => 'sidebar-1',
+		'description' => __(
+			'Add widgets here to appear in your footer.',
+			'megan_tw'
+		),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget' => '</section>',
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>',
+	]);
 }
-add_action( 'widgets_init', 'megan_tw_widgets_init' );
+add_action('widgets_init', 'megan_tw_widgets_init');
 
 /**
  * Enqueue scripts and styles.
  */
-function megan_tw_scripts() {
-	wp_enqueue_style( 'megan_tw-style', get_stylesheet_uri(), array(), MEGAN_TW_VERSION );
-	wp_enqueue_script( 'megan_tw-script', get_template_directory_uri() . '/js/script.min.js', array(), MEGAN_TW_VERSION, true );
+function megan_tw_scripts()
+{
+	wp_enqueue_style(
+		'megan_tw-style',
+		get_stylesheet_uri(),
+		[],
+		MEGAN_TW_VERSION
+	);
+	wp_enqueue_script(
+		'megan_tw-script',
+		get_template_directory_uri() . '/js/script.min.js',
+		[],
+		MEGAN_TW_VERSION,
+		true
+	);
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+	if (is_singular() && comments_open() && get_option('thread_comments')) {
+		wp_enqueue_script('comment-reply');
 	}
 }
-add_action( 'wp_enqueue_scripts', 'megan_tw_scripts' );
+add_action('wp_enqueue_scripts', 'megan_tw_scripts');
 
-function enqueue_custom_scripts() {
-    wp_enqueue_script('intersection-observer', get_template_directory_uri() . '/js/intersection-observer.js', array(), null, true);
+function enqueue_custom_scripts()
+{
+	wp_enqueue_script(
+		'intersection-observer',
+		get_template_directory_uri() . '/js/intersection-observer.js',
+		[],
+		null,
+		true
+	);
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
 /**
  * Enqueue the block editor script.
  */
-function megan_tw_enqueue_block_editor_script() {
-	if ( is_admin() ) {
+function megan_tw_enqueue_block_editor_script()
+{
+	if (is_admin()) {
 		wp_enqueue_script(
 			'megan_tw-editor',
 			get_template_directory_uri() . '/js/block-editor.min.js',
-			array(
-				'wp-blocks',
-				'wp-edit-post',
-			),
+			['wp-blocks', 'wp-edit-post'],
 			MEGAN_TW_VERSION,
 			true
 		);
-		wp_add_inline_script( 'megan_tw-editor', "tailwindTypographyClasses = '" . esc_attr( MEGAN_TW_TYPOGRAPHY_CLASSES ) . "'.split(' ');", 'before' );
+		wp_add_inline_script(
+			'megan_tw-editor',
+			"tailwindTypographyClasses = '" .
+				esc_attr(MEGAN_TW_TYPOGRAPHY_CLASSES) .
+				"'.split(' ');",
+			'before'
+		);
 	}
 }
-add_action( 'enqueue_block_assets', 'megan_tw_enqueue_block_editor_script' );
+add_action('enqueue_block_assets', 'megan_tw_enqueue_block_editor_script');
 
 /**
  * Add the Tailwind Typography classes to TinyMCE.
@@ -185,11 +209,33 @@ add_action( 'enqueue_block_assets', 'megan_tw_enqueue_block_editor_script' );
  * @param array $settings TinyMCE settings.
  * @return array
  */
-function megan_tw_tinymce_add_class( $settings ) {
+function megan_tw_tinymce_add_class($settings)
+{
 	$settings['body_class'] = MEGAN_TW_TYPOGRAPHY_CLASSES;
 	return $settings;
 }
-add_filter( 'tiny_mce_before_init', 'megan_tw_tinymce_add_class' );
+add_filter('tiny_mce_before_init', 'megan_tw_tinymce_add_class');
+
+/* 
+	add code to get rid of errors that show before editor appears when creating a new page
+*/
+
+add_action('init', function () {
+	if (!function_exists('stripos_safe')) {
+		function stripos_safe($haystack, $needle)
+		{
+			$haystack = $haystack ?? '';
+			return stripos($haystack, $needle);
+		}
+	}
+});
+
+add_action('init', function () {
+	global $social_initial_state;
+	if (!isset($social_initial_state)) {
+		$social_initial_state = [];
+	}
+});
 
 /**
  * Custom template tags for this theme.
